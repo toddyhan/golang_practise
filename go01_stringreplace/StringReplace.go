@@ -1,5 +1,8 @@
 package go01_stringreplace
-
+/*
+思路：创建一个比原数组大（数组个数*2）的数组。然后创建两个指针，p1指向原数组的末尾，p2指向新数组的末尾。
+然后原数组使用p1向前遍历，如果遇到空格，则新数组从p2处依次向前修改内容为02%；如果遇到的不是空格，则直接将p1处内容放到p2处。
+*/
 func StringReplace(input string) (output string ,err error) {
 	if len(input) == 0 {
 		return "", nil
