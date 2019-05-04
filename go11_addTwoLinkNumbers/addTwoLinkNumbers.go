@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -116,6 +118,34 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 //	}
 //	return head.Next
 //}
+
+func initList(nums []int) *ListNode {
+	pHeader := &ListNode{}
+	point := pHeader
+	for _,val := range nums {
+		point.Next = &ListNode{val, nil}
+		point = point.Next
+	}
+	return pHeader.Next
+}
+
+func printList(node *ListNode)  {
+	for node != nil {
+		fmt.Println(node.Val)
+		node = node.Next
+	}
+}
 func main() {
+	testData1 := []int{2,4,3}
+	l1 := initList(testData1)
+	fmt.Println("l1:")
+	printList(l1)
+	testData2 := []int{5,6,4}
+	l2 := initList(testData2)
+	fmt.Println("l2:")
+	printList(l2)
+	result := addTwoNumbers(l1,l2)
+	fmt.Println("result:")
+	printList(result)
 
 }
