@@ -1,6 +1,10 @@
 package findMedianSortedArrays
 
-import "testing"
+import (
+	"fmt"
+	"math"
+	"testing"
+)
 
 
 /**
@@ -40,4 +44,6 @@ func Test_findMedianSortedArrays(t *testing.T) {
 		t.Errorf("test is wrong, testA is : %v, testB is : %v, result is %v", testA1, testB1, result)
 		t.Fatal("test is wrong")
 	}
+	fmt.Println(math.MaxInt32)
+	fmt.Println(math.MinInt32)
 }
